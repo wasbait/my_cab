@@ -1,0 +1,18 @@
+version: '3.1'
+services:
+  db:
+    image: mariadb
+    restart: on-failure
+    ports:
+      - 33006:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: changeMe
+      MYSQL_DATABASE: my_cab
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin_pass
+
+  adminer:
+    image: adminer
+    restart: on-failure
+    ports:
+      - 8888:8080
